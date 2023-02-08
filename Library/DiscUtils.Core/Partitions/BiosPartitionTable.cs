@@ -642,12 +642,12 @@ public sealed class BiosPartitionTable : PartitionTable
         return r.PartitionType == BiosPartitionTypes.Extended || r.PartitionType == BiosPartitionTypes.ExtendedLba;
     }
 
-    private static byte ConvertType(WellKnownPartitionType type, long size)
+    private static byte ConvertType(WellKnownPartitionType type, long size, bool forceFat32 = false)
     {
         switch (type)
         {
             case WellKnownPartitionType.WindowsFat:
-                if (size < 512 * Sizes.OneMiB)
+                if (size < 512 * Sizes.OneMiB && false) // we dont want fat16
                 {
                     return BiosPartitionTypes.Fat16;
                 }

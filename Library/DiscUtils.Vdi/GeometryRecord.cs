@@ -25,7 +25,7 @@ using DiscUtils.Streams;
 
 namespace DiscUtils.Vdi;
 
-internal class GeometryRecord
+public class GeometryRecord
 {
     public int Cylinders;
     public int Heads;

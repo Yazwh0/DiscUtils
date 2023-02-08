@@ -83,11 +83,12 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
     /// <remarks>
     /// Local time is the effective timezone of the new instance.
     /// </remarks>
-    public FatFileSystem(Stream data)
+    public FatFileSystem(Stream data, bool forceFat32)
         : base(new FatFileSystemOptions())
     {
         _dirCache = new Dictionary<uint, Directory>();
         _timeConverter = DefaultTimeConverter;
+        ForceFat32 = forceFat32;
         Initialize(data);
     }
 
@@ -246,6 +247,8 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
     /// Gets the FAT variant of the file system.
     /// </summary>
     public FatType FatVariant { get; private set; }
+
+    public bool ForceFat32 { get; private set; }
 
     /// <summary>
     /// Gets the (informational only) file system type recorded in the meta-data.
@@ -1694,7 +1697,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         _data.Position = 0;
         _bootSector = StreamUtilities.ReadSector(_data);
 
-        FatVariant = DetectFATType(_bootSector);
+        FatVariant = ForceFat32 ? FatType.Fat32 : DetectFATType(_bootSector);
 
         ReadBPB();
 
@@ -1954,7 +1957,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
 
         // Give the caller access to the new file system
         stream.Position = pos;
-        return new FatFileSystem(stream);
+        return new FatFileSystem(stream, false);
     }
 
     /// <summary>
@@ -1964,7 +1967,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
     /// <param name="partitionIndex">The index of the partition on the disk.</param>
     /// <param name="label">The volume label for the partition (or null).</param>
     /// <returns>An object that provides access to the newly created partition file system.</returns>
-    public static FatFileSystem FormatPartition(VirtualDisk disk, int partitionIndex, string label)
+    public static FatFileSystem FormatPartition(VirtualDisk disk, int partitionIndex, string label, bool forcefat32 = false)
     {
         using Stream partitionStream = disk.Partitions[partitionIndex].Open();
         return FormatPartition(
@@ -1973,7 +1976,8 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
             disk.Geometry ?? disk.BiosGeometry,
             (int)disk.Partitions[partitionIndex].FirstSector,
             (int)(1 + disk.Partitions[partitionIndex].LastSector - disk.Partitions[partitionIndex].FirstSector),
-            0);
+            0,
+            forcefat32);
     }
 
     /// <summary>
@@ -1992,7 +1996,8 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         Geometry diskGeometry,
         int firstSector,
         int sectorCount,
-        short reservedSectors)
+        short reservedSectors,
+        bool forcefat32 = false)
     {
         var pos = stream.Position;
 
@@ -2012,7 +2017,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
             throw new ArgumentException("Requested size is too small for a partition");
         }
 
-        if (sectorCount < 1024 * 1024)
+        if (sectorCount < 1024 * 1024 && !forcefat32)
         {
             fatType = FatType.Fat16;
             maxRootEntries = 512;
@@ -2129,7 +2134,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
          */
 
         stream.Position = pos;
-        return new FatFileSystem(stream);
+        return new FatFileSystem(stream, forcefat32);
     }
 
 #endregion
