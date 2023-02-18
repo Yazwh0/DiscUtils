@@ -28,7 +28,7 @@ using DiscUtils.Streams;
 
 namespace DiscUtils.Fat;
 
-internal class Directory : IDisposable
+public class Directory : IDisposable
 {
     private readonly Stream _dirStream;
     private readonly Directory _parent;
@@ -347,14 +347,14 @@ internal class Directory : IDisposable
         _entries[id] = entry;
     }
 
-    private void LoadEntries()
+    public void LoadEntries()
     {
         _entries = new Dictionary<long, DirectoryEntry>();
         _freeEntries = new List<long>();
 
         _selfEntryLocation = -1;
         _parentEntryLocation = -1;
-
+        _dirStream.Position = 0;
         while (_dirStream.Position < _dirStream.Length)
         {
             var entry = new DirectoryEntry(FileSystem.FatOptions, _dirStream, FileSystem.FatVariant);

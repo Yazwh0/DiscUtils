@@ -70,7 +70,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
     private string _bsVolLab;
     private Stream _data;
     private Directory _rootDir;
-    
+
     static FatFileSystem()
     {
         EncodingHelper.RegisterEncodings();
@@ -1438,6 +1438,30 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         return GetDirectoryEntry(_rootDir, path, out parent);
     }
 
+    public void UpdateFsInfoFreeSpace()
+    {
+        var p = _data.Position;
+        _data.Position = _bpbFSInfo * SectorSize;
+        var fsInfo = StreamUtilities.ReadExact(_data, SectorSize);
+
+        var usedSectors = UsedSpace / SectorSize;
+        var freeSectors = TotalSectors - ReservedSectorCount - usedSectors;
+        fsInfo[488 + 0] = (byte)(freeSectors & 0xff);
+        fsInfo[488 + 1] = (byte)((freeSectors >> 8) & 0xff);
+        fsInfo[488 + 2] = (byte)((freeSectors >> 16) & 0xff);
+        fsInfo[488 + 3] = (byte)((freeSectors >> 24) & 0xff);
+
+        _data.Position = _bpbFSInfo * SectorSize;
+        _data.Write(fsInfo, 0, SectorSize);
+
+        _data.Position = p;
+    }
+
+    public void UpdateCaches()
+    {
+        LoadRootDirectory();
+    }
+
     /// <summary>
     /// Disposes of this instance.
     /// </summary>
@@ -1731,6 +1755,8 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         _rootDir = new Directory(this, fatStream);
     }
 
+    public Directory RootDir => _rootDir;
+
     private void LoadFAT()
     {
         Fat = new FileAllocationTable(FatVariant, _data, _bpbRsvdSecCnt, (uint)FatSize, FatCount, ActiveFat);
@@ -1763,6 +1789,12 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
             _bpbFSVer = EndianUtilities.ToUInt16LittleEndian(_bootSector, 42);
             _bpbRootClus = EndianUtilities.ToUInt32LittleEndian(_bootSector, 44);
             _bpbFSInfo = EndianUtilities.ToUInt16LittleEndian(_bootSector, 48);
+
+            var p = _data.Position;
+            _data.Position = _bpbFSInfo * 512;
+            var fsinfo = StreamUtilities.ReadSector(_data);
+            _data.Position = p;
+
             _bpbBkBootSec = EndianUtilities.ToUInt16LittleEndian(_bootSector, 50);
             ReadBS(64);
         }
@@ -1864,7 +1896,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
     /// <summary>
     /// Size of the Filesystem in bytes
     /// </summary>
-    public override long Size { get { return ((TotalSectors - ReservedSectorCount - (FatSize * FatCount))*SectorSize); } }
+    public override long Size { get { return ((TotalSectors - ReservedSectorCount - (FatSize * FatCount)) * SectorSize); } }
 
     /// <summary>
     /// Used space of the Filesystem in bytes
@@ -1882,7 +1914,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
                     usedCluster++;
                 }
             }
-            return (usedCluster *SectorsPerCluster*SectorSize);
+            return (usedCluster * SectorsPerCluster * SectorSize);
         }
     }
 
@@ -1893,7 +1925,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
 
     private delegate void EntryUpdateAction(DirectoryEntry entry);
 
-#region Disk Formatting
+    #region Disk Formatting
 
     /// <summary>
     /// Creates a formatted floppy disk image in a stream.
@@ -2121,6 +2153,44 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         stream.Write(rootDir, 0, rootDir.Length);
 
         /*
+         * Create FSInfo structure
+         */
+        Span<byte> fsInfo = stackalloc byte[512];
+        // Lead Sig
+        fsInfo[0] = 0x52;
+        fsInfo[1] = 0x52;
+        fsInfo[2] = 0x61;
+        fsInfo[3] = 0x41;
+
+        // Struct Sig
+        fsInfo[484 + 0] = 0x72;
+        fsInfo[484 + 1] = 0x72;
+        fsInfo[484 + 2] = 0x41;
+        fsInfo[484 + 3] = 0x61;
+
+        // Trail Sig
+        fsInfo[508 + 0] = 0x00;
+        fsInfo[508 + 1] = 0x00;
+        fsInfo[508 + 2] = 0x55;
+        fsInfo[508 + 3] = 0xaa;
+
+        // Free count, drive is new so set to sectors - reserved sectors
+        var freeSectors = sectorCount - reservedSectors;
+        fsInfo[488 + 0] = (byte)(freeSectors & 0xff);
+        fsInfo[488 + 1] = (byte)((freeSectors >> 8) & 0xff);
+        fsInfo[488 + 2] = (byte)((freeSectors >> 16) & 0xff);
+        fsInfo[488 + 3] = (byte)((freeSectors >> 24) & 0xff);
+
+        // Next Free
+        fsInfo[492 + 0] = 0xff;
+        fsInfo[492 + 1] = 0xff;
+        fsInfo[492 + 2] = 0xff;
+        fsInfo[492 + 3] = 0xff;
+
+        stream.Position = pos + 1 * Sizes.Sector; // hard coded to 1 earlier
+        stream.Write(fsInfo);
+
+        /*
          * Make sure the stream is at least as large as the partition requires.
          */
 
@@ -2137,5 +2207,5 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         return new FatFileSystem(stream, forcefat32);
     }
 
-#endregion
+    #endregion
 }
