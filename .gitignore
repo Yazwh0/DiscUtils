@@ -15,3 +15,5 @@ LaunchSettings.json
 Tests/LibraryTests/TestResults/
 *.nupkg
 *.snupkg
+
+Library/*
