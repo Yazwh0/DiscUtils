@@ -4,8 +4,9 @@
   <!-- Package related stuff -->
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
-	<PackageId>LTRData.$(MSBuildProjectName)</PackageId>
+    <LangVersion>Latest</LangVersion>
+    <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
+    <PackageId>LTRData.$(MSBuildProjectName)</PackageId>
     <PackageOutputPath>$(LocalNuGetPath)</PackageOutputPath>
     <PackageVersion>$(FileVersion)</PackageVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
