@@ -22,6 +22,7 @@
 
 using System;
 using System.Buffers;
+using System.Collections.Generic;
 using System.IO;
 using DiscUtils.Streams;
 using DiscUtils.Streams.Compatibility;
@@ -42,6 +43,8 @@ public class DirectoryEntry
     private ushort _lastAccessDate;
     private ushort _lastWriteDate;
     private ushort _lastWriteTime;
+    private List<(long pos, int slot)> _slots = new();
+
 
     internal DirectoryEntry(FatFileSystemOptions options, Stream stream, FatType fatVariant)
     {
@@ -180,6 +183,19 @@ public class DirectoryEntry
         EndianUtilities.WriteBytesLittleEndian(_fileSize, buffer.Slice(28));
 
         stream.Write(buffer);
+    }
+
+    public IEnumerable<(long Pos, int Slot)> Slots => _slots;
+
+    internal void WriteAndCreateSlot(long pos, int slot, Stream stream)
+    {
+        _slots.Add((pos, slot));
+        Name.WriteSlot(slot, stream);
+    }
+
+    internal void UpdateSlot(int slot, Stream stream)
+    {
+        Name.WriteSlot(slot, stream);
     }
 
     private static DateTime FileTimeToDateTime(ushort date, ushort time, byte tenths)

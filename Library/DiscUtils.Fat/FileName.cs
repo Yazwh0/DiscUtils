@@ -24,7 +24,9 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Xml.Linq;
 using DiscUtils.Internal;
+using DiscUtils.Streams;
 using DiscUtils.Streams.Compatibility;
 
 namespace DiscUtils.Fat;
@@ -101,6 +103,12 @@ public sealed class FileName : IEquatable<FileName>
             throw new IOException($"Too long name: '{name}'");
         }
 
+        _lfn = name;
+
+        if (name.Length > 12)
+        {
+            name = name[..6] + "~1" + Path.GetExtension(name);
+        }
         _raw = new byte[11];
 
         Span<byte> bytes = stackalloc byte[encoding.GetByteCount(name)];
@@ -221,7 +229,7 @@ public sealed class FileName : IEquatable<FileName>
             //throw new ArgumentException($"File extension too long '{name}'", nameof(name));
         }
 
-        _lfn = name;
+//        _lfn = name;
     }
 
     public bool Equals(FileName other) => Equals(this, other);
@@ -285,6 +293,11 @@ public sealed class FileName : IEquatable<FileName>
 
     public void SetShortName(string name, Encoding encoding)
     {
+        if (name.Length > 12)
+        {
+            name = name[..6] + "~1." + Path.GetExtension(name);
+        }
+
         var bytes = encoding.GetBytes(name.ToUpperInvariant());
 
         var nameIdx = 0;
@@ -424,4 +437,86 @@ public sealed class FileName : IEquatable<FileName>
     public string ShortName => GetShortName(Encoding.ASCII);
 
     public override string ToString() => GetDisplayName(Encoding.ASCII);
+
+    // Long File Name Support
+    public int ExtraSlotsRequired()
+    {
+        if (_lfn.Length <= 12)
+            return 0;
+
+        var slots = _lfn.Length / 13.0;
+
+        if (slots == Math.Truncate(slots))
+            return (int)slots; // we'd -1 for exact length, + 1 as its not zero based.
+
+        return (_lfn.Length / 13) + 1;
+    }
+
+    // writes a slot
+    // slot number is 1 based.
+    public void WriteSlot(int slot, Stream stream)
+    {
+        Span<byte> buffer = stackalloc byte[32];
+        var slotsRequired = ExtraSlotsRequired();
+
+        var baseIndex = (slot - 1) * 13;
+
+        if (slot == slotsRequired)
+        {
+            slot |= 0x40;
+        }
+
+        buffer[0] = (byte)slot;
+        WriteFilenamePart(baseIndex + 0, 5, buffer, 1); // 10bytes
+        buffer[11] = 0x0f;
+        buffer[12] = 0x00;
+        buffer[13] = GetFat32Checksum(); // checksum
+        WriteFilenamePart(baseIndex + 5, 6, buffer, 14); // 12 bytes
+        buffer[26] = 0x00;
+        buffer[27] = 0x00;
+        WriteFilenamePart(baseIndex + 11, 2, buffer, 28); // 4 bytes
+
+        stream.Write(buffer);
+    }
+
+    // writes unicode
+    private void WriteFilenamePart(int startIndex, int length, Span<byte> buffer, int bufferPos)
+    {
+        var counter = 0;
+        while (counter < length)
+        {
+            if (startIndex + counter == _lfn.Length)
+            {
+                buffer[bufferPos + counter * 2] = 0x00;
+                buffer[bufferPos + counter * 2 + 1] = 0x00;
+            }
+            else if (startIndex + counter > _lfn.Length)
+            {
+                buffer[bufferPos + counter * 2] = 0xff;
+                buffer[bufferPos + counter * 2 + 1] = 0xff;
+            }
+            else
+            {
+                var unicode = (short)_lfn[startIndex + counter];
+                buffer[bufferPos + counter * 2] = (byte)(unicode & 0xff);
+                buffer[bufferPos + counter * 2 + 1] = (byte)(unicode >> 8);
+            }
+
+            counter++;
+        }
+    }
+
+    private byte GetFat32Checksum()
+    {
+        var name = ShortName;
+        name = Path.GetFileNameWithoutExtension(name).PadRight(8) + Path.GetExtension(name)[1..];
+
+        byte sum = 0;
+        for(var i = 0; i < 11; i++)
+        {
+            sum = (byte)(((sum & 1) << 7) + (sum >> 1) + (byte)name[i]);
+        }
+
+        return sum;
+    }
 }

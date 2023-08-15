@@ -276,8 +276,32 @@ public class Directory : IDisposable
 
     internal long AddEntry(DirectoryEntry newEntry)
     {
-        // Unlink an entry from the free list (or add to the end of the existing directory)
+        var slotsRequired = newEntry.Name.ExtraSlotsRequired(); // not zero based!!
         long pos;
+
+        if (slotsRequired != 0)
+        {
+            for(var i = slotsRequired; i != 0; i--)
+            {
+                // Unlink an entry from the free list (or add to the end of the existing directory)
+                if (_freeEntries.Count > 0)
+                {
+                    pos = _freeEntries[0];
+                    _freeEntries.RemoveAt(0);
+                }
+                else
+                {
+                    pos = _endOfEntries;
+                    _endOfEntries += 32;
+                }
+
+                // Put the new entry into it's slot
+                _dirStream.Position = pos;
+                newEntry.WriteAndCreateSlot(pos, i, _dirStream);
+            }
+        }
+
+        // Unlink an entry from the free list (or add to the end of the existing directory)
         if (_freeEntries.Count > 0)
         {
             pos = _freeEntries[0];
@@ -345,6 +369,13 @@ public class Directory : IDisposable
         _dirStream.Position = id;
         entry.WriteTo(_dirStream);
         _entries[id] = entry;
+
+        // update long file name
+        foreach(var slot in entry.Slots)
+        {
+            _dirStream.Position = slot.Pos;
+            entry.UpdateSlot(slot.Slot, _dirStream);
+        }
     }
 
     public void LoadEntries()
