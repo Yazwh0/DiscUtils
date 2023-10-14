@@ -28,7 +28,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public static class EndianUtilities
 {

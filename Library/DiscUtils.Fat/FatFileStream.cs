@@ -25,9 +25,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 internal class FatFileStream : SparseStream
 {

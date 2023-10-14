@@ -20,14 +20,14 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams.Compatibility;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Base class for streams that wrap another stream.

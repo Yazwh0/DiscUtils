@@ -23,7 +23,7 @@
 using System;
 using System.IO;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public class BigEndianDataWriter : DataWriter
 {

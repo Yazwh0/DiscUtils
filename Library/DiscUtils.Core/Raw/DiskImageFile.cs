@@ -22,11 +22,11 @@
 
 using System;
 using System.IO;
-using DiscUtils.Partitions;
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Partitions;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
 
-namespace DiscUtils.Raw;
+namespace BitMagic.DiscUtils.Raw;
 
 /// <summary>
 /// Represents a single raw disk image file.

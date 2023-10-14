@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Bitmap where each bit can be marked as unused or in use, with methods

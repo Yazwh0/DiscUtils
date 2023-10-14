@@ -20,10 +20,10 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Core.WindowsSecurity.AccessControl;
+using BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 using System.Collections.Generic;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Provides the base class for all file systems that support Windows semantics.

@@ -1,6 +1,6 @@
 using System;
 
-namespace DiscUtils.Core.WindowsSecurity;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity;
 
 internal class WellKnownAccount
 {

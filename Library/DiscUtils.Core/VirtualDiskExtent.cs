@@ -21,9 +21,9 @@
 //
 
 using System;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Base class represented a stored extent of a virtual disk.

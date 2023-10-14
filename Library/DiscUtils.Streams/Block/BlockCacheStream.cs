@@ -26,7 +26,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// A stream implementing a block-oriented read cache.

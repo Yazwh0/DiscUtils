@@ -27,10 +27,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Provides an implementation for OS-mounted file systems.

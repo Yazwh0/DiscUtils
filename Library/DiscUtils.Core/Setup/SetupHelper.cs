@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace DiscUtils.Setup;
+namespace BitMagic.DiscUtils.Setup;
 
 /// <summary>
 /// Helps setup new DiscUtils dependencies, when loaded into target programs

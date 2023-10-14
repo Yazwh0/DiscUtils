@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Represents a stream with a specified length

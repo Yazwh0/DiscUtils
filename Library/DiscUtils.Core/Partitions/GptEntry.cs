@@ -23,10 +23,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
 
-namespace DiscUtils.Partitions;
+namespace BitMagic.DiscUtils.Partitions;
 
 internal class GptEntry : IComparable<GptEntry>
 {

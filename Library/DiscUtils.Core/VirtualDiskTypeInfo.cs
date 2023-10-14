@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Information about a type of virtual disk.

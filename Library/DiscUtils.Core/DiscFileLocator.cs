@@ -22,11 +22,11 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
+using BitMagic.DiscUtils.Internal;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
-internal sealed class DiscFileLocator : FileLocator
+public sealed class DiscFileLocator : FileLocator
 {
     private readonly string _basePath;
     private readonly DiscFileSystem _fileSystem;

@@ -22,7 +22,7 @@
 
 using System.Text;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Class with generic file system parameters.

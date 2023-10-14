@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 /// <summary>
 /// Base class for block compression algorithms.

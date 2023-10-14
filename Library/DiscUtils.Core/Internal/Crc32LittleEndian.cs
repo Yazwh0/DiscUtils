@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
 /// <summary>
 /// Calculates CRC32 of buffers.

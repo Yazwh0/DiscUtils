@@ -23,7 +23,7 @@
 using System;
 using System.Text;
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 /// <summary>
 /// FAT file system options.

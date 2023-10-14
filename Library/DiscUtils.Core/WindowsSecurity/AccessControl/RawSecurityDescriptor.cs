@@ -1,7 +1,7 @@
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 using System;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public class RawSecurityDescriptor : GenericSecurityDescriptor
 {

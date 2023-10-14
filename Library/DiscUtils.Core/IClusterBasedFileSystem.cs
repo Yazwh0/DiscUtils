@@ -20,10 +20,10 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 using System.Collections.Generic;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Base class for all file systems based on a cluster model.

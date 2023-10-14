@@ -25,10 +25,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
-using DiscUtils.Raw;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Raw;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Partitions;
+namespace BitMagic.DiscUtils.Partitions;
 
 /// <summary>
 /// Base class for classes which represent a disk partitioning scheme.

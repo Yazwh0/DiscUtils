@@ -26,11 +26,11 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using DiscUtils.Internal;
-using DiscUtils.Partitions;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Partitions;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Base class representing virtual hard disks.

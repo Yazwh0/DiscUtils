@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using DiscUtils.Internal;
+using BitMagic.DiscUtils.Internal;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Helps discover and use VirtualDiskFactory's

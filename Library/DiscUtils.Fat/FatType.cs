@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 /// <summary>
 /// Enumeration of known FAT types.

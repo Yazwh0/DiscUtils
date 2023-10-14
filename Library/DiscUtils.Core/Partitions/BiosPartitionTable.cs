@@ -26,11 +26,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
 
-namespace DiscUtils.Partitions;
+namespace BitMagic.DiscUtils.Partitions;
 
 /// <summary>
 /// Represents a BIOS (MBR) Partition Table.

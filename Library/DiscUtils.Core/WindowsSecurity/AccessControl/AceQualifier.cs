@@ -1,4 +1,4 @@
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public enum AceQualifier
 {

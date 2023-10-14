@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 /// <summary>
 /// Base class for bit streams.

@@ -1,8 +1,8 @@
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 using System;
 using System.Globalization;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public sealed class ObjectAce : QualifiedAce
 {

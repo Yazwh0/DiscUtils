@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace DiscUtils.Core.WindowsSecurity;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity;
 
 [ComVisible(false)]
 public sealed class SecurityIdentifier : IdentityReference, IComparable<SecurityIdentifier>

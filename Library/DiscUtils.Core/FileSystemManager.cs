@@ -25,9 +25,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
-using DiscUtils.Vfs;
+using BitMagic.DiscUtils.Vfs;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// FileSystemManager determines which file systems are present on a volume.

@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Event arguments indicating progress on pumping a stream.

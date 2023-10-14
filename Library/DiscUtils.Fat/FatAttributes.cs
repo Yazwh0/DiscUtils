@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 [Flags]
 public enum FatAttributes : byte

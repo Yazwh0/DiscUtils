@@ -25,11 +25,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
-using Buffer = DiscUtils.Streams.Buffer;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
+using Buffer = BitMagic.DiscUtils.Streams.Buffer;
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 internal class ZlibBuffer : Buffer
 {

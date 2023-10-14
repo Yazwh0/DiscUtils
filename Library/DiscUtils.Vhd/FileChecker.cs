@@ -22,10 +22,10 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 /// <summary>
 /// VHD file format verifier, that identifies corrupt VHD files.

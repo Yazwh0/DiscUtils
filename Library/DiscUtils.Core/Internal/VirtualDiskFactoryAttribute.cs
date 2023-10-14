@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
 [AttributeUsage(AttributeTargets.Class)]
 public sealed class VirtualDiskFactoryAttribute : Attribute

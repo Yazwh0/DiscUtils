@@ -22,10 +22,10 @@
 
 using System;
 using System.IO;
-using DiscUtils.Partitions;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Partitions;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.ApplePartitionMap;
+namespace BitMagic.DiscUtils.ApplePartitionMap;
 
 internal sealed class PartitionMapEntry : PartitionInfo, IByteArraySerializable
 {

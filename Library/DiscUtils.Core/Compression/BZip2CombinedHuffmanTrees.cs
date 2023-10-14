@@ -26,7 +26,7 @@
 
 using System.IO;
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 /// <summary>
 /// Represents scheme used by BZip2 where multiple Huffman trees are used as a

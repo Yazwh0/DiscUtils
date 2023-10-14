@@ -23,7 +23,7 @@
 using System;
 using System.IO;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
 internal abstract class VirtualDiskTransport : IDisposable
 {

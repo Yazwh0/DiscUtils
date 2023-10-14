@@ -1,7 +1,7 @@
-﻿using DiscUtils.Streams;
+﻿using BitMagic.DiscUtils.Streams;
 using System.Collections.Generic;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 public interface IAllocationExtentsFileSystem : IFileSystem
 {

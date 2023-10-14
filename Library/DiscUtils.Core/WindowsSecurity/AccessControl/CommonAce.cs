@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public sealed class CommonAce : QualifiedAce
 {

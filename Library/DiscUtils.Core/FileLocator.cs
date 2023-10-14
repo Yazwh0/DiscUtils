@@ -22,10 +22,10 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Setup;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Setup;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 public abstract class FileLocator
 {
@@ -56,7 +56,7 @@ public abstract class FileLocator
 
     public abstract string ResolveRelativePath(string path);
 
-    internal string MakeRelativePath(FileLocator fileLocator, string path)
+    public string MakeRelativePath(FileLocator fileLocator, string path)
     {
         if (!HasCommonRoot(fileLocator))
         {

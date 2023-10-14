@@ -20,11 +20,11 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams.Compatibility;
 using System;
 using System.Collections.Generic;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Represents a range of values.

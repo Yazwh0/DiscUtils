@@ -20,10 +20,10 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 using System.IO;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Describes a particular file that is a constituent part of a virtual disk.
@@ -32,7 +32,7 @@ public sealed class DiskImageFileSpecification
 {
     private readonly StreamBuilder _builder;
 
-    internal DiskImageFileSpecification(string name, StreamBuilder builder)
+    public DiskImageFileSpecification(string name, StreamBuilder builder)
     {
         Name = name;
         _builder = builder;

@@ -20,10 +20,10 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 using System;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 internal class ParentLocator
 {

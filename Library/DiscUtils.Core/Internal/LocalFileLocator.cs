@@ -23,9 +23,9 @@
 using System;
 using System.IO;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
-internal sealed class LocalFileLocator : FileLocator
+public sealed class LocalFileLocator : FileLocator
 {
     private readonly string _dir;
 

@@ -24,9 +24,9 @@ using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.LogicalDiskManager;
+namespace BitMagic.DiscUtils.LogicalDiskManager;
 
 internal class Database
 {

@@ -24,10 +24,10 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using DiscUtils.Partitions;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Partitions;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.LogicalDiskManager;
+namespace BitMagic.DiscUtils.LogicalDiskManager;
 
 internal class DynamicDiskGroup : IDiagnosticTraceable
 {

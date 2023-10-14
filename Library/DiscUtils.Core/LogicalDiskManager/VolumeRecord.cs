@@ -21,9 +21,9 @@
 //
 
 using System;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.LogicalDiskManager;
+namespace BitMagic.DiscUtils.LogicalDiskManager;
 
 internal sealed class VolumeRecord : DatabaseRecord
 {

@@ -22,10 +22,10 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vfs;
+namespace BitMagic.DiscUtils.Vfs;
 
 /// <summary>
 /// Base class for read-only file system implementations.

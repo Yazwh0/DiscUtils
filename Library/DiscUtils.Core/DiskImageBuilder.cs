@@ -23,10 +23,10 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Base class for all disk image builders.

@@ -23,7 +23,7 @@
 using System;
 using System.Buffers;
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 internal abstract class DataBlockTransform
 {

@@ -22,7 +22,7 @@
 
 using System.Collections.Generic;
 
-namespace DiscUtils.Vfs;
+namespace BitMagic.DiscUtils.Vfs;
 
 /// <summary>
 /// Interface implemented by classes representing a directory.

@@ -24,7 +24,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public class BuilderBytesExtent : BuilderExtent
 {

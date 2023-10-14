@@ -1,4 +1,4 @@
-namespace DiscUtils.Core.WindowsSecurity;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity;
 
 public enum WellKnownSidType
 {

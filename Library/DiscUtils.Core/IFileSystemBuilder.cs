@@ -23,7 +23,7 @@
 using System;
 using System.IO;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 public interface IFileSystemBuilder
 {

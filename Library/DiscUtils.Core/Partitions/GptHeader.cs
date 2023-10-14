@@ -22,10 +22,10 @@
 
 using System;
 using System.Buffers;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Partitions;
+namespace BitMagic.DiscUtils.Partitions;
 
 internal class GptHeader
 {

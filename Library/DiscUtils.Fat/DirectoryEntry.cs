@@ -24,10 +24,10 @@ using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 public class DirectoryEntry
 {

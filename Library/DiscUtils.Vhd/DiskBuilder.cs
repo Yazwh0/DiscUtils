@@ -23,9 +23,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 /// <summary>
 /// Creates new VHD disks by wrapping existing streams.

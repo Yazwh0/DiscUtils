@@ -23,10 +23,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vdi;
+namespace BitMagic.DiscUtils.Vdi;
 
 /// <summary>
 /// Represents a disk stored in VirtualBox (Sun xVM) format.

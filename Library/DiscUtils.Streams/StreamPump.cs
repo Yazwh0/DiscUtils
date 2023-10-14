@@ -23,7 +23,7 @@
 using System;
 using System.IO;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Utility class for pumping the contents of one stream into another.

@@ -24,9 +24,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 /// <summary>
 /// Provides read access to detailed information about a VHD file.

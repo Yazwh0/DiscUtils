@@ -20,15 +20,15 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 internal class ClusterStream : CompatibilityStream
 {

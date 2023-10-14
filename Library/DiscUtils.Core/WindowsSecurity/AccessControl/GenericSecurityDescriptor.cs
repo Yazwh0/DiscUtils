@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public abstract class GenericSecurityDescriptor
 {

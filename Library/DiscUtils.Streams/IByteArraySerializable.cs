@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Common interface for reading structures to/from byte arrays.

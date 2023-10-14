@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace DiscUtils.Archives;
+namespace BitMagic.DiscUtils.Archives;
 
 public sealed class TarFileData
 {

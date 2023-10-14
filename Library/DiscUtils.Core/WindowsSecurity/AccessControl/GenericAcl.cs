@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public abstract class GenericAcl : ICollection
 {

@@ -25,10 +25,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vfs;
+namespace BitMagic.DiscUtils.Vfs;
 
 /// <summary>
 /// Base class for VFS file systems.

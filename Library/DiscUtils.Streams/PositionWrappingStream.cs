@@ -25,7 +25,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Stream wrapper to allow forward only seeking on not seekable streams

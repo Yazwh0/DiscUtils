@@ -22,10 +22,10 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vdi;
+namespace BitMagic.DiscUtils.Vdi;
 
 [VirtualDiskFactory("VDI", ".vdi")]
 internal sealed class DiskFactory : VirtualDiskFactory

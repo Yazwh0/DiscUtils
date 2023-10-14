@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Standard Unix-style file system permissions.

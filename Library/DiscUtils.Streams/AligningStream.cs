@@ -26,7 +26,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Aligns I/O to a given block size.

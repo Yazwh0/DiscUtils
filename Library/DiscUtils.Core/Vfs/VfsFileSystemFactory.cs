@@ -23,7 +23,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace DiscUtils.Vfs;
+namespace BitMagic.DiscUtils.Vfs;
 
 /// <summary>
 /// Base class for logic to detect file systems.

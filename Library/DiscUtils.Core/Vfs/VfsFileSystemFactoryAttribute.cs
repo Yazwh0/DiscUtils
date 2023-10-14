@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Vfs;
+namespace BitMagic.DiscUtils.Vfs;
 
 /// <summary>
 /// Attribute identifying file system factory classes.

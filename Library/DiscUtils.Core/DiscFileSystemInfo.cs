@@ -22,17 +22,17 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams.Compatibility;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Provides the base class for both <see cref="DiscFileInfo"/> and <see cref="DiscDirectoryInfo"/> objects.
 /// </summary>
 public class DiscFileSystemInfo
 {
-    internal DiscFileSystemInfo(DiscFileSystem fileSystem, string path)
+    public DiscFileSystemInfo(DiscFileSystem fileSystem, string path)
     {
         if (path == null)
         {

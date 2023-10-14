@@ -23,9 +23,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vfs;
+namespace BitMagic.DiscUtils.Vfs;
 
 /// <summary>
 /// Base class for the public facade on a file system.

@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 public sealed class AceEnumerator : IEnumerator
 {

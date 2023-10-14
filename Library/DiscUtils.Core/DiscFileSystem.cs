@@ -24,9 +24,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Provides the base class for all file systems.

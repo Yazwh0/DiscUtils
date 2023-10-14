@@ -21,9 +21,9 @@
 //
 
 using System;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 internal class Footer
 {

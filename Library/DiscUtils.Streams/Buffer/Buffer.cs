@@ -26,7 +26,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Buffers;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Abstract base class for implementations of IBuffer.

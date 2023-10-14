@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.Vdi;
+namespace BitMagic.DiscUtils.Vdi;
 
 internal struct FileVersion
 {

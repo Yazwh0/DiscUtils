@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 /// <summary>
 /// Possible results of attempting to compress data.

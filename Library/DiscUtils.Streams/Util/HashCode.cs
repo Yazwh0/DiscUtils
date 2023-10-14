@@ -45,7 +45,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace DiscUtils.Streams.Compatibility;
+namespace BitMagic.DiscUtils.Streams.Compatibility;
 
 #if NETFRAMEWORK && !NET461_OR_GREATER
 

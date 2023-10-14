@@ -20,13 +20,13 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams.Compatibility;
 using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public abstract class DataWriter
 {

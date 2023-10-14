@@ -22,14 +22,14 @@
 
 using System.IO;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Provides information about a file on a disc.
 /// </summary>
 public class DiscFileInfo : DiscFileSystemInfo
 {
-    internal DiscFileInfo(DiscFileSystem fileSystem, string path)
+    public DiscFileInfo(DiscFileSystem fileSystem, string path)
         : base(fileSystem, path) {}
 
     /// <summary>

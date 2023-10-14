@@ -26,7 +26,7 @@
 
 using System;
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 internal class BZip2Randomizer : DataBlockTransform
 {

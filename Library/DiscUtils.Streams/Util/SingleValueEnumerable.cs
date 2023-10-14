@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 #nullable enable
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public static class SingleValueEnumerable
 {

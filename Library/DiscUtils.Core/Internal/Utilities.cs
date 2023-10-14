@@ -20,14 +20,14 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams.Compatibility;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
 public static class Utilities
 {

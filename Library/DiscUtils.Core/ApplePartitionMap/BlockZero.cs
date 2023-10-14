@@ -21,9 +21,9 @@
 //
 
 using System;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.ApplePartitionMap;
+namespace BitMagic.DiscUtils.ApplePartitionMap;
 
 internal struct BlockZero : IByteArraySerializable
 {

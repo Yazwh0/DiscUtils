@@ -27,12 +27,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using DiscUtils.Internal;
-using DiscUtils.Partitions;
-using DiscUtils.Raw;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Partitions;
+using BitMagic.DiscUtils.Raw;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// VolumeManager interprets partitions and other on-disk structures (possibly combining multiple disks).

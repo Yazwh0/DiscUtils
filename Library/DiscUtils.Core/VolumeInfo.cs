@@ -21,9 +21,9 @@
 //
 
 using System;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Base class that holds information about a disk volume.

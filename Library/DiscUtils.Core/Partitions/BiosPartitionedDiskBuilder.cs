@@ -23,9 +23,9 @@
 using System;
 using System.Buffers;
 using System.Collections.Generic;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Partitions;
+namespace BitMagic.DiscUtils.Partitions;
 
 /// <summary>
 /// Builds a stream with the contents of a BIOS partitioned disk.

@@ -23,10 +23,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Internal;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Internal;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Raw;
+namespace BitMagic.DiscUtils.Raw;
 
 /// <summary>
 /// Represents a raw disk image.

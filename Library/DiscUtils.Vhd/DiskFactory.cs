@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
+using BitMagic.DiscUtils.Internal;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 [VirtualDiskFactory("VHD", ".vhd,.avhd")]
 internal sealed class DiskFactory : VirtualDiskFactory

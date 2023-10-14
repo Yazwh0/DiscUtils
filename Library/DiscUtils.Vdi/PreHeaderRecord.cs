@@ -22,10 +22,10 @@
 
 using System;
 using System.IO;
-using DiscUtils.Streams;
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams.Compatibility;
 
-namespace DiscUtils.Vdi;
+namespace BitMagic.DiscUtils.Vdi;
 
 internal class PreHeaderRecord
 {

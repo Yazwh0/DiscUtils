@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.LogicalDiskManager;
+namespace BitMagic.DiscUtils.LogicalDiskManager;
 
 internal sealed class DiskGroupRecord : DatabaseRecord
 {

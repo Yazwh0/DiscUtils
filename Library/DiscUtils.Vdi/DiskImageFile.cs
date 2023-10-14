@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vdi;
+namespace BitMagic.DiscUtils.Vdi;
 
 /// <summary>
 /// Represents a single VirtualBox disk (.vdi file).

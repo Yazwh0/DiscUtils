@@ -1,6 +1,6 @@
 using System;
 
-namespace DiscUtils.Core.WindowsSecurity;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity;
 
 public sealed class NTAccount : IdentityReference
 {

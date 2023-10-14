@@ -1,4 +1,4 @@
-﻿namespace DiscUtils;
+﻿namespace BitMagic.DiscUtils;
 
 public interface IDosFileSystem : IFileSystem
 {

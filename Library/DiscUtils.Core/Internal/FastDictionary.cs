@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
 internal sealed class FastDictionary<T> : KeyedCollection<string, T>, IReadOnlyDictionary<string, T>
 {

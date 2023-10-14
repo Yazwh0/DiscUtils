@@ -27,7 +27,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 internal static class Plist
 {

@@ -1,4 +1,4 @@
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 #pragma warning disable IDE0079 // Remove unnecessary suppression
 #pragma warning disable CA1069 // Enums values should not be duplicated

@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams.Compatibility;
+using BitMagic.DiscUtils.Streams.Compatibility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +28,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public class StripedStream : SparseStream
 {

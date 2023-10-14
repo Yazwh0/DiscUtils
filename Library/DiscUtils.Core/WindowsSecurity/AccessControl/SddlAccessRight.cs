@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 internal class SddlAccessRight
 {

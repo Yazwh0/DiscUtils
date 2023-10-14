@@ -1,6 +1,6 @@
 using System;
 
-namespace DiscUtils.Core.WindowsSecurity.AccessControl;
+namespace BitMagic.DiscUtils.Core.WindowsSecurity.AccessControl;
 
 [Flags]
 public enum ControlFlags

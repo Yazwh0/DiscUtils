@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using DiscUtils.Internal;
+using BitMagic.DiscUtils.Internal;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 [VirtualDiskTransport("file")]
 internal sealed class FileTransport : VirtualDiskTransport

@@ -24,7 +24,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// Represents a stream that is circular, so reads and writes off the end of the stream wrap.

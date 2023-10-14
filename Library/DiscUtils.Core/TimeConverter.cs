@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Converts a time to/from UTC.

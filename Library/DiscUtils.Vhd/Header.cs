@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 internal class Header
 {

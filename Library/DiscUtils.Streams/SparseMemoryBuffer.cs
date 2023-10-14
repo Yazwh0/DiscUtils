@@ -24,7 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 /// <summary>
 /// A sparse in-memory buffer.

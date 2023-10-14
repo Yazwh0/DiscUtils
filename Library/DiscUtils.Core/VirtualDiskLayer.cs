@@ -23,9 +23,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Represents the base layer, or a differencing layer of a VirtualDisk.

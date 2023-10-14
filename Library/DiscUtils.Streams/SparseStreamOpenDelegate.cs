@@ -1,3 +1,3 @@
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public delegate SparseStream SparseStreamOpenDelegate();

@@ -22,7 +22,7 @@
 
 using System.Collections.Generic;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public class BlockCache<T>
     where T : Block, new()

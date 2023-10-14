@@ -26,7 +26,7 @@
 
 using System.IO;
 
-namespace DiscUtils.Compression;
+namespace BitMagic.DiscUtils.Compression;
 
 internal class BZip2BlockDecoder
 {

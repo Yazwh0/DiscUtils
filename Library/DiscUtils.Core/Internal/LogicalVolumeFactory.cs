@@ -22,7 +22,7 @@
 
 using System.Collections.Generic;
 
-namespace DiscUtils.Internal;
+namespace BitMagic.DiscUtils.Internal;
 
 internal abstract class LogicalVolumeFactory
 {

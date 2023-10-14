@@ -22,7 +22,7 @@
 
 using System;
 
-namespace DiscUtils.Streams;
+namespace BitMagic.DiscUtils.Streams;
 
 public static class MathUtilities
 {

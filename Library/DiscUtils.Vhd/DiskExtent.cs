@@ -20,9 +20,9 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils.Vhd;
+namespace BitMagic.DiscUtils.Vhd;
 
 internal sealed class DiskExtent : VirtualDiskExtent
 {

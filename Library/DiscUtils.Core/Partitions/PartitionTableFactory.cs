@@ -22,7 +22,7 @@
 
 using System.IO;
 
-namespace DiscUtils.Partitions;
+namespace BitMagic.DiscUtils.Partitions;
 
 internal abstract class PartitionTableFactory
 {

@@ -23,7 +23,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Class that identifies the role of each cluster in a file system.

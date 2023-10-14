@@ -20,7 +20,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-namespace DiscUtils.Archives;
+namespace BitMagic.DiscUtils.Archives;
 
 public sealed class TarFileRecord
 {

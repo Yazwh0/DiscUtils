@@ -21,12 +21,12 @@
 //
 
 using System.IO;
-using DiscUtils.Vfs;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Vfs;
+using BitMagic.DiscUtils.Streams;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DiscUtils.Fat;
+namespace BitMagic.DiscUtils.Fat;
 
 [VfsFileSystemFactory]
 internal class FileSystemFactory : VfsFileSystemFactory

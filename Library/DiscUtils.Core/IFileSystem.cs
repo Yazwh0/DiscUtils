@@ -23,9 +23,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DiscUtils.Streams;
+using BitMagic.DiscUtils.Streams;
 
-namespace DiscUtils;
+namespace BitMagic.DiscUtils;
 
 /// <summary>
 /// Common interface for all file systems.
