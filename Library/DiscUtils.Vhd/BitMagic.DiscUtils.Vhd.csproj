@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Description>DiscUtils VHD</Description>
+    
+    <PackageTags>DiscUtils;VHD</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DiscUtils.Core\BitMagic.DiscUtils.Core.csproj" />
+    <ProjectReference Include="..\DiscUtils.Streams\BitMagic.DiscUtils.Streams.csproj" />
+  </ItemGroup>
+
+</Project>

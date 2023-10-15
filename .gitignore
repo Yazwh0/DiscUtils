@@ -16,4 +16,4 @@ Tests/LibraryTests/TestResults/
 *.nupkg
 *.snupkg
 
-Library/*
+**/net6.0/*
