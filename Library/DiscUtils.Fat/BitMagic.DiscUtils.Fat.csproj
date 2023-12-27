@@ -1,9 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Description>DiscUtils FAT filesystem parser</Description>
+    <Description>Modified For BitMagic! DiscUtils FAT filesystem parser</Description>
     <Authors>Kenneth Bell;LordMike;Olof Lagerkvist</Authors>
     <PackageTags>DiscUtils;Filesystem;FAT</PackageTags>
+    <LangVersion>Latest</LangVersion>
+
+    <PackageProjectUrl>https://github.com/LTRData/DiscUtils</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+
+    <Company>LTR Data</Company>
+    <Authors>Kenneth Bell;LordMike;Olof Lagerkvist</Authors>
   </PropertyGroup>
 
   <ItemGroup>

@@ -2,9 +2,17 @@
   
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Description>DiscUtils Streams</Description>
+    <Description>Modified For BitMagic! DiscUtils Streams</Description>
     <Authors>Kenneth Bell;LordMike;Bianco Veigel;Olof Lagerkvist</Authors>
     <PackageTags>DiscUtils;Streams</PackageTags>
+    <LangVersion>Latest</LangVersion>
+
+    <PackageProjectUrl>https://github.com/LTRData/DiscUtils</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+
+    <Company>LTR Data</Company>
+    <Authors>Kenneth Bell;LordMike;Olof Lagerkvist</Authors>
   </PropertyGroup>
   
   <ItemGroup>

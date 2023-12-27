@@ -1,9 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Description>DiscUtils VHD</Description>
+    <Description>Modified For BitMagic! DiscUtils VHD</Description>
     
     <PackageTags>DiscUtils;VHD</PackageTags>
+    <LangVersion>Latest</LangVersion>
+
+    <PackageProjectUrl>https://github.com/LTRData/DiscUtils</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+
+    <Company>LTR Data</Company>
+    <Authors>Kenneth Bell;LordMike;Olof Lagerkvist</Authors>
   </PropertyGroup>
 
   <ItemGroup>
