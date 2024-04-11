@@ -105,7 +105,7 @@ public sealed class FileName : IEquatable<FileName>
 
         _lfn = name;
 
-        if (name.Length > 12)
+        if (name.Length > 12 || (name.LastIndexOf('.') == -1 && name.Length > 8))
         {
             name = name[..6] + "~1" + Path.GetExtension(name);
         }
@@ -441,7 +441,7 @@ public sealed class FileName : IEquatable<FileName>
     // Long File Name Support
     public int ExtraSlotsRequired()
     {
-        if (_lfn.Length <= 12)
+        if ((_lfn.Length <= 12 && _lfn.Contains('.')) || _lfn.Length <= 8)
             return 0;
 
         var slots = _lfn.Length / 13.0;
@@ -509,7 +509,9 @@ public sealed class FileName : IEquatable<FileName>
     private byte GetFat32Checksum()
     {
         var name = ShortName;
-        name = Path.GetFileNameWithoutExtension(name).PadRight(8) + Path.GetExtension(name)[1..];
+        var extension = Path.GetExtension(name);
+
+        name = extension.Length == 0 ? name.PadRight(12) : Path.GetFileNameWithoutExtension(name).PadRight(8) + extension[1..];
 
         byte sum = 0;
         for(var i = 0; i < 11; i++)
