@@ -514,7 +514,7 @@ public sealed class FileName : IEquatable<FileName>
         name = extension.Length == 0 ? name.PadRight(12) : Path.GetFileNameWithoutExtension(name).PadRight(8) + extension[1..];
 
         byte sum = 0;
-        for(var i = 0; i < 11; i++)
+        for(var i = 0; i < name.Length; i++)
         {
             sum = (byte)(((sum & 1) << 7) + (sum >> 1) + (byte)name[i]);
         }
