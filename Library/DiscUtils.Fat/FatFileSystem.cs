@@ -999,7 +999,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         }
 
         // Add the new file's entry
-        destEntryId = destDir.AddEntry(newEntry);
+        destEntryId = destDir.AddEntry(newEntry, false);
 
         // Copy the contents...
         using Stream sourceStream = new FatFileStream(this, sourceDir, sourceEntryId, FileAccess.Read),
@@ -1354,7 +1354,7 @@ public sealed class FatFileSystem : DiscFileSystem, IDosFileSystem, IClusterBase
         }
 
         // Add the new file's entry and remove the old link to the file's contents
-        destDir.AddEntry(newEntry);
+        destDir.AddEntry(newEntry, false);
         sourceDir.DeleteEntry(sourceEntryId, false);
     }
 

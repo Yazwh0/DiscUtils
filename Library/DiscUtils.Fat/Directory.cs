@@ -160,7 +160,7 @@ public class Directory : IDisposable
             };
             newEntry.LastWriteTime = newEntry.CreationTime;
 
-            id = AddEntry(newEntry);
+            id = AddEntry(newEntry, name.RequiresShortName);
 
             PopulateNewChildDirectory(newEntry);
 
@@ -186,7 +186,7 @@ public class Directory : IDisposable
         {
             Name = name
         };
-        AddEntry(newEntry);
+        AddEntry(newEntry, name.RequiresShortName);
 
         var newParentEntry = new DirectoryEntry(SelfEntry)
         {
@@ -265,7 +265,7 @@ public class Directory : IDisposable
             };
             newEntry.LastWriteTime = newEntry.CreationTime;
 
-            fileId = AddEntry(newEntry);
+            fileId = AddEntry(newEntry, name.RequiresShortName);
 
             return new FatFileStream(FileSystem, this, fileId, fileAccess);
         }
@@ -274,7 +274,7 @@ public class Directory : IDisposable
         throw new NotImplementedException();
     }
 
-    internal long AddEntry(DirectoryEntry newEntry)
+    internal long AddEntry(DirectoryEntry newEntry, bool changeShortName)
     {
         var slotsRequired = newEntry.Name.ExtraSlotsRequired(); // not zero based!!
         long pos;
@@ -311,6 +311,11 @@ public class Directory : IDisposable
         {
             pos = _endOfEntries;
             _endOfEntries += 32;
+        }
+
+        if (changeShortName)
+        {
+            newEntry.SetRequireShortNameSetting();
         }
 
         // Put the new entry into it's slot

@@ -43,8 +43,8 @@ public class DirectoryEntry
     private ushort _lastAccessDate;
     private ushort _lastWriteDate;
     private ushort _lastWriteTime;
+    private bool _requireShortNameSetting = false;
     private List<(long pos, int slot)> _slots = new();
-
 
     internal DirectoryEntry(FatFileSystemOptions options, Stream stream, FatType fatVariant)
     {
@@ -110,6 +110,12 @@ public class DirectoryEntry
         _lastWriteTime = toCopy._lastWriteTime;
         _firstClusterLo = toCopy._firstClusterLo;
         _fileSize = toCopy._fileSize;
+        _requireShortNameSetting = toCopy._requireShortNameSetting;
+    }
+
+    public void SetRequireShortNameSetting()
+    {
+        _requireShortNameSetting = true;
     }
 
     public FatAttributes Attributes
@@ -143,6 +149,12 @@ public class DirectoryEntry
 
         set
         {
+            if (_requireShortNameSetting)
+            {
+                Name.OverrideShortname(value, _options.FileNameEncoding);
+                _requireShortNameSetting = false;
+            }
+
             if (_fatVariant == FatType.Fat32)
             {
                 _firstClusterHi = (ushort)((value >> 16) & 0xFFFF);

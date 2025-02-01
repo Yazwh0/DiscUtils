@@ -50,6 +50,8 @@ public sealed class FileName : IEquatable<FileName>
 
     private readonly string _lfn;
 
+    public bool RequiresShortName { get; private set; } = false;
+
     public FileName(ReadOnlySpan<byte> data)
     {
         var offset = 0;
@@ -108,6 +110,7 @@ public sealed class FileName : IEquatable<FileName>
         if (name.Length > 12 || (name.LastIndexOf('.') == -1 && name.Length > 8))
         {
             name = name[..6] + "~1" + Path.GetExtension(name);
+            RequiresShortName = true;   // override this name later
         }
         _raw = new byte[11];
 
@@ -296,6 +299,7 @@ public sealed class FileName : IEquatable<FileName>
         if (name.Length > 12)
         {
             name = name[..6] + "~1." + Path.GetExtension(name);
+            RequiresShortName = true;
         }
 
         var bytes = encoding.GetBytes(name.ToUpperInvariant());
@@ -354,6 +358,12 @@ public sealed class FileName : IEquatable<FileName>
         {
             throw new ArgumentException($"File extension too long '{name}'", nameof(name));
         }
+    }
+
+    public void OverrideShortname(uint firstCluser, Encoding encoding)
+    {
+        // we need unique shortnames, lets use the first cluster in hex as a 8 characters plus extension
+        SetShortName($"{firstCluser:X8}.{(char)_raw[8]}{(char)_raw[9]}{(char)_raw[10]}", encoding);
     }
 
     public bool IsMatch(Func<string, bool> filter, Encoding encoding)
