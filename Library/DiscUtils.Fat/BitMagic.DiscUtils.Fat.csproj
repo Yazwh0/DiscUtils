@@ -19,8 +19,4 @@
     <ProjectReference Include="..\DiscUtils.Streams\BitMagic.DiscUtils.Streams.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework.CompareTo(`net5`))' &gt;= 0">
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="*" />
-  </ItemGroup>
-
 </Project>
