@@ -23,8 +23,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework.CompareTo(`net461`))' &gt;= 0">
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="*" />
-    <PackageReference Include="Microsoft.Bcl.HashCode" Version="*" />
+    <PackageReference Include="Microsoft.Bcl.HashCode" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
